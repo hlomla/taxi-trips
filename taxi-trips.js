@@ -19,12 +19,12 @@ module.exports = function TaxiTrips(pool) {
         await pool.query('select taxi_id from region')
     };
 
-    async function findTripsByRegNumber(){
-
+    async function findTripsByRegNumber(reg_number){
+        await pool.query('select * from trip where reg_number = $1', [reg_number])
     };
 
     async function findTripsByRegion(){
-
+        await pool.query('select trip_id from region')
     };
 
     async function findIncomeByRegNumber(){
