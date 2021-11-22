@@ -7,7 +7,7 @@ node_js:
   - "12.22.7"
 
 before_script:
-  - psql -c 'create database  my_fruit_basket;' -U postgres
-  - psql -U postgres -d my_fruit_basket -a -f fruitBasket.sql
+  - psql -c 'create database taxi_trips;' -U postgres
+  - psql -U postgres -d taxi_trips -a -f tables.sql
 services:
   - postgresql
